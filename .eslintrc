@@ -6,6 +6,6 @@
   "rules": {
     "semi": [0, "never"],
   },
-  "extends": ["airbnb-base"]
-  #"extends": ["eslint:recommended", "plugin:react/recommended"]
+  "extends": ["airbnb-base", "eslint:recommended", "plugin:react/recommended"]
+
 }
