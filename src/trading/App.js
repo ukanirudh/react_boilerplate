@@ -1,13 +1,12 @@
-import React from 'react'
-import App from '../home-page/homePageRoutes'
-import { Provider } from 'react-redux'
-import setupStore from './store'
+import React from "react";
+import { Provider } from "react-redux";
+import App from "../home-page/homePageRoutes";
+import setupStore from "./store";
 
-export const TradingApp = () =>
-{
-  return (
-    <Provider store={setupStore()}>
-      <App />
-    </Provider>
-  )
-}
+const TradingApp = () => (
+  <Provider store={setupStore()}>
+    <App />
+  </Provider>
+);
+
+export default TradingApp;
