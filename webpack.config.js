@@ -9,12 +9,36 @@ module.exports = env => {
     entry: "./src/index.js",
     output: {
       path: path.join(__dirname, "/dist"),
-      filename: "index-bundle.js"
+      filename: 'main.js',
+      chunkFilename: '[name].js',
+      publicPath: '/'
     },
     devtool: isDevelopment ? "inline-source-map" : "",
     devServer: {
       contentBase: "./dist",
       hot: true
+    },
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          default: false,
+          vendors: false,
+          vendor: {
+              name: 'vendor',
+              chunks: 'all',
+              test: /node_modules/,
+              priority: 20
+          },
+          common: {
+              name: 'common',
+              minChunks: 2,
+              chunks: 'all',
+              priority: 10,
+              reuseExistingChunk: true,
+              enforce: true
+          }
+        }
+      }
     },
     module: {
       rules: [

@@ -5,6 +5,11 @@
   ],
   "rules": {
     "semi": [0, "never"],
+    "react/prop-types": 0,
+    "env": {
+      "browser": true,
+      "node": true
+    }
   },
   "extends": ["airbnb-base", "eslint:recommended", "plugin:react/recommended"]
 
